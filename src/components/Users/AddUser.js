@@ -10,10 +10,6 @@ const AddUser = (props) => {
   const nameRef = useRef();
   const ageRef = useRef();
 
-  // const [details, setDetails] = useState({
-  //   name: "",
-  //   age: "",
-  // });
   const [error, setError] = useState();
 
   const addUserHandler = (event) => {
@@ -43,20 +39,7 @@ const AddUser = (props) => {
     props.onAddUser(all);
     nameRef.current.value = "";
     ageRef.current.value = "";
-    // setDetails({
-    //   name: "",
-    //   age: "",
-    // });
   };
-
-  // const textChangeHandler = (newKey) => {
-  //   setDetails((preState) => {
-  //     return {
-  //       ...preState,
-  //       ...newKey,
-  //     };
-  //   });
-  // };
 
   const errorHandler = () => {
     setError(null);
@@ -86,17 +69,7 @@ const AddUser = (props) => {
             // }}
           />
           <label htmlFor="age">Age (Years)</label>
-          <input
-            id="age"
-            type="number"
-            ref={ageRef}
-            // value={details.age}
-            // onChange={(event) => {
-            //   textChangeHandler({
-            //     age: event.target.value,
-            //   });
-            // }}
-          />
+          <input id="age" type="number" ref={ageRef} />
           <Button type="submit">Add User</Button>
         </form>
       </Card>
